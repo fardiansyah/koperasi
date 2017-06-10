@@ -43,6 +43,7 @@ class kredit(models.Model):
     kredit_line = fields.One2many('ksp.kredit.line','kredit_id')
     biaya_line = fields.One2many('ksp.kredit.biaya.line','kredit_id')
     move_line = fields.One2many('account.move','kredit_id')
+    jaminan_line = fields.One2many('ksp.kredit.jaminan.line','kredit_id')
     total_angsuran = fields.Integer('Total Angsuran', compute='_total_angsuran')
     total_pokok = fields.Integer('Total Pokok', compute='_total_angsuran')
     total_bunga = fields.Integer('Total Bunga', compute='_total_angsuran')
@@ -434,6 +435,20 @@ class kredit_line(models.Model):
         else:
             self.lunas = True
         return
+
+class kredit_jaminan_line(models.Model):
+    _name = 'ksp.kredit.jaminan.line'
+
+    name = fields.Char('name')
+    kredit_id = fields.Many2one('ksp.kredit','Kredit Id')
+    jaminan_id = fields.Many2one('ksp.jaminan','Jaminan id')
+    nilai = fields.Integer('Nilai',compute='_get_nilai')
+
+    @api.one
+    @api.depends('jaminan_id')
+    def _get_nilai(self):
+        self.nilai = self.jaminan_id.harga_taksiran
+
 
 class kredit_bayar(models.Model):
     _name = 'ksp.kredit.bayar'

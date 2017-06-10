@@ -88,7 +88,15 @@
                         </group>
                     </group>
                 <notebook>
-                  <page string="Jadwal Angsuran">
+                    <page string="Jaminan">
+                        <field name="jaminan_line">
+                            <tree string="Jaminan yang dipergunakan">
+                                <field name="jaminan_id"/>
+                                <field name="nilai"/>
+                            </tree>
+                        </field>
+                    </page>
+                    <page string="Jadwal Angsuran">
                     <field name="kredit_line">
                         <tree String="Jadwal Angsuran" attrs="{'readonly':[('status','!=','draft')]}">
                             <field name="name" string="No. Angsuran"/>
@@ -102,7 +110,7 @@
                             <field name="lunas"/>
                         </tree>
                     </field>
-                  </page>
+                    </page>
                     <page string="Validasi">
                         <group>
                             <group>
@@ -493,6 +501,7 @@
                         <field name="description"/>
                         <field name="model"/>
                         <field name="harga_pasar"/>
+                        <field name="harga_taksiran"/>
                     </group>
                 </sheet>
             </form>
