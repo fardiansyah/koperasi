@@ -441,6 +441,9 @@
                         <field name="deposito"/>
                         <field name="tabungan"/>
                     </group>
+                    <group>
+                        <field name="no_id"/>
+                    </group>
                 </page>
             </xpath>
         </field>
@@ -503,6 +506,40 @@
                         <field name="harga_pasar"/>
                         <field name="harga_taksiran"/>
                     </group>
+                    <notebook>
+                        <page string="Mobil/Motor">
+                            <group>
+                                <group>
+                                    <field name="type"/>
+                                    <field name="no_mesin"/>
+                                    <field name="no_rangka"/>
+                                    <field name="no_polisi"/>
+                                    <field name="no_bpkb"/>
+                                </group>
+                                <group>
+                                    <field name="tahun"/>
+                                    <field name="warna"/>
+                                    <field name="nama_stnk"/>
+                                    <field name="alamat_stnk"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Sertifikat">
+                            <group>
+                                <field name="no_sertifikat"/>
+                                <field name="bentuk_sertifikat"/>
+                                <field name="alamat_sertifikat"/>
+                                <field name="luas_sertifikat"/>
+                                <field name="no_surat_ukur"/>
+                                <field name="tgl_surat_ukur"/>
+                            </group>
+                        </page>
+                        <page string="Informasi Tambahan">
+                            <group>
+                                <field name="keterangan"/>
+                            </group>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>

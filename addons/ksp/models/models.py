@@ -551,6 +551,7 @@ class res_partner(models.Model):
     kredit = fields.Boolean('Nasabah Kredit')
     deposito = fields.Boolean('Nasabah Deposito')
     tabungan = fields.Boolean('Nasabah Tabungan')
+    no_id = fields.Char('N.I.K')
 
 class ksp_jaminan(models.Model):
     _name = 'ksp.jaminan'
@@ -584,6 +585,13 @@ class ksp_jaminan(models.Model):
     warna = fields.Char("Warna")
     nama_stnk = fields.Char("Atas nama STNK")
     alamat_stnk = fields.Char("Alamat STNK")
+    no_sertifikat = fields.Char('Nomor Sertifikat')
+    bentuk_sertifikat = fields.Char('Bentuk Sertifikat')
+    alamat_sertifikat = fields.Char('Alamat')
+    luas_sertifikat = fields.Char('Luas Tanah/Bangunan')
+    no_surat_ukur = fields.Char('No. Surat Ukur')
+    tgl_surat_ukur = fields.Char('Tanggal Surat Ukur')
+    keterangan = fields.Text('Keterangan')
 
     @api.one
     @api.depends('model')
