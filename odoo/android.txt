@@ -1,0 +1,3 @@
+title=Odoo Partner
+author=rudyanto santoso
+orientation=potrait

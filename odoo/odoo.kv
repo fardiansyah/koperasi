@@ -1,0 +1,22 @@
+<MyWidget>:
+    orientation: 'vertical'
+
+    Image:
+        id: gambar
+
+    Label:
+        id: nama
+        text: root.nama_text
+
+    BoxLayout:
+        orientation: 'horizontal'
+
+        Button:
+            id: btn_prev
+            text: 'Prev'
+            on_press: root.update_prev()
+
+        Button:
+            id: btn_next
+            text: 'Next'
+            on_press: root.update_next()
